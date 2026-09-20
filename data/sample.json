@@ -1,0 +1,9 @@
+{
+  "event_id": "092103-010-sample-001",
+  "event_type": "ROUTE_PUBLISHED",
+  "aggregate_type": "route_revision",
+  "aggregate_id": "scenic_route_dispatch-001",
+  "occurred_at": "2026-09-20T16:00:00+08:00",
+  "version": 1,
+  "summary": "景区分层线路调度联调样例"
+}
