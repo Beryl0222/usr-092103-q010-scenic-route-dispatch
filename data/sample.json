@@ -5,5 +5,19 @@
   "aggregate_id": "scenic_route_dispatch-001",
   "occurred_at": "2026-09-20T16:00:00+08:00",
   "version": 1,
-  "summary": "景区分层线路调度联调样例"
+  "summary": "景区分层线路调度联调样例：发布精品观光线路 v1",
+  "payload": {
+    "route": {
+      "route_id": "scenic_route_dispatch-001",
+      "tier": "scic",
+      "version": 1,
+      "gate": "east_gate",
+      "nodes": ["east_gate", "viewpoint_a", "summit"],
+      "edges": ["cw_1", "st_1"],
+      "valid_from": "2026-10-01T08:00:00+08:00",
+      "min_capability": 1
+    },
+    "edges": [],
+    "facilities": []
+  }
 }

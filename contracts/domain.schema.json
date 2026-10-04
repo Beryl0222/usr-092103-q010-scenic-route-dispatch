@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "景区分层线路调度领域事件",
+  "description": "公共信封保持稳定；payload 携带各事件类型的业务字段。事件以 occurred_at 表示业务发生时刻，存储层另记 recorded_at 表示入库时刻，迟到数据按 recorded_at 顺序生效、绝不回溯。",
   "type": "object",
   "required": [
     "event_id",
@@ -23,7 +24,25 @@
         "CAPACITY_RESERVED",
         "RISK_CLEARED",
         "ROUTE_REROUTED",
-        "INCIDENT_REVIEWED"
+        "INCIDENT_REVIEWED",
+        "FACILITY_STATUS_CHANGED",
+        "WEATHER_RISK_ISSUED",
+        "WEATHER_RISK_CLEARED",
+        "ENTRY_SLOT_OPENED",
+        "VISITOR_CAPABILITY_DECLARED",
+        "VISITOR_CONSENT_UPDATED",
+        "PARTY_REGISTERED",
+        "PARTY_SPLIT",
+        "RESERVATION_PLACED",
+        "RESERVATION_CONFIRMED",
+        "RESERVATION_TIMED_OUT",
+        "RESERVATION_RELEASED",
+        "SEGMENT_USED",
+        "QUALIFICATION_VERIFIED",
+        "MANUAL_APPROVAL_DECIDED",
+        "EVACUATION_ORDERED",
+        "EVACUATION_STOOD_DOWN",
+        "DISPATCH_NOTE_ISSUED"
       ]
     },
     "aggregate_type": {
@@ -32,7 +51,14 @@
         "route_revision",
         "capacity_window",
         "visitor_party",
-        "dispatch_decision"
+        "dispatch_decision",
+        "facility",
+        "weather_advisory",
+        "entry_slot",
+        "visitor",
+        "reservation",
+        "qualification",
+        "evacuation"
       ]
     },
     "aggregate_id": {
@@ -50,6 +76,10 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "description": "事件业务字段，键与事件类型对应，详见 README 事件目录。"
     }
   },
   "additionalProperties": true
